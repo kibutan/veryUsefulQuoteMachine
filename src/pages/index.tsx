@@ -15,7 +15,7 @@ import { Main } from "../components/Main";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
-import { m } from "framer-motion";
+import { m, motion } from "framer-motion";
 import QuoteBox from "../components/QuoteBox";
 
 const Index = () => (

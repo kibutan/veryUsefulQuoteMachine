@@ -1,35 +1,32 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and TypeScript
+# Typescript 周り
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app with TypeScript.
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/hooks/
+チートシート
+tsfc とか入れればいい感じのスニペットがでる。
 
-Next.js and chakra-ui have built-in TypeScript declarations, so we'll get autocompletion for their modules straight away.
+# npm update 周り
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Provider and theme so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
+npm outdated で確認して、
+npm-check-updates インスコしてまた確認して(ncu)
+ncu -u で package.json 自体を更新。
+@chakuraui/icons でエラー吐かれるので、
+npm update PACKAGE_NAME で更新したり
+--force で強制的に更新したり。
 
-## Deploy your own
+CHAKURA UI + TYPESCRIPT の Example は React がまだ v17 だったりする。
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-chakra-ui)
+# Jest Install と V28 によるエラー周り
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript&project-name=with-chakra-ui&repository-name=with-chakra-ui)
+https://nextjs.org/docs/testing#jest-and-react-testing-library
+Next.js 公式(これだと v28 がインスコされてエラー泊)
 
-## How to use
+https://zenn.dev/miruoon_892/articles/e42e64fbb55137
+Typescript で Next.js のテストを書いている人ただし v27
 
-### Using `create-next-app`
+https://zenn.dev/keita_hino/articles/488d31e8c4a240
+v27 から v28 に上げることで発生するエラーについて
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-chakra-ui with-chakra-ui-app
-# or
-yarn create next-app --example with-chakra-ui with-chakra-ui-app
-# or
-pnpm create next-app -- --example with-chakra-ui with-chakra-ui-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-Chakra has supported Gradients and RTL in `v1.1`. To utilize RTL, [add RTL direction and swap](https://chakra-ui.com/docs/features/rtl-support).
-
-If you don't have multi-direction app, you should make `<Html lang="ar" dir="rtl">` inside `_document.ts`.
+> ● Validation Error:
+> Test environment jest-environment-jsdom cannot be found. Make sure the testEnvironment configuration option points to an existing node module.
+> Configuration Documentation:
+> https://jestjs.io/docs/configuration

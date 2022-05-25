@@ -1,4 +1,5 @@
 import { Avatar, Box, HStack, Stack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -7,6 +8,9 @@ export default function QuoteBox({}: Props) {
     <HStack
       h="50%"
       w="50%"
+      as={motion.div}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
       bg="whiteAlpha.300"
       border="1px solid"
       borderColor="whiteAlpha.200"
@@ -23,7 +27,7 @@ export default function QuoteBox({}: Props) {
       alignItems="center"
       display="flex"
     >
-      <Avatar mx="5" />
+      <Avatar marginLeft="16" />
       <Stack>
         <Box fontSize="sm">Author</Box>
         <Box>Quote</Box>
