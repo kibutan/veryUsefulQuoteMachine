@@ -6,5 +6,6 @@ describe("Index", () => {
   test("renders", () => {
     render(<Index />);
     expect(screen.getByText("Quote")).toBeInTheDocument();
+    expect(screen.getByText("Quote")).toMatchSnapshot();
   });
 });
